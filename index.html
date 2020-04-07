@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="styles.css" rel="stylesheet">
+<link href="numpad.css" rel="stylesheet">
+<script src="numpad.js"></script>
+
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablink" onclick="openTab(event, 'Main')" id="defaultOpen" >Main</button>
+  <button class="tablink" onclick="openTab(event, 'Maintenence')">Maintenence</button>
+  <button class="tablink" onclick="openTab(event, 'Cost')">Cost Estimator</button>
+  <button class="tablink" onclick="openTab(event, 'Network')">Network</button>
+  <button class="tablink" onclick="openTab(event, 'Advanced')">Advanced</button>
+</div>
+<!-- Tabs and content -->
+<div id="Main" class="tabcontent">
+
+  <div class="push">
+    <button class="button">Pause</button>
+    <button class="button">Clear Error</button>
+    <br></br>
+    <button class="button">Cancel Job</button>
+    <button class="button">Print Color Bars</button>
+  </div>
+  <!-- __________Inks_____________ -->
+    <div id="myProgressC">
+      <div id="myBarC">55%</div>
+    </div>
+    <br></br>
+    <div id="myProgressM">
+      <div id="myBarM">72%</div>
+    </div>
+    <br></br>
+    <div id="myProgressY">
+      <div id="myBarY">42%</div>
+    </div>
+    <br></br>
+    <div id="myProgressK">
+      <div id="myBarK">23%</div>
+    </div>
+    <br></br>
+    <div id="myProgressSS">
+      <label>Service Station Life</label>
+      <div id="myBarSS">96%</div>
+    </div>
+
+    <br></br>
+    <br></br>
+    <br />
+    <label2>Page Count:</label2>
+    <frac>765/1000</frac>
+    <br></br>
+    <img src="Papers/Paper10.png" alt="single page">
+
+    <h2>Settings</h2>
+    <label>Mid-job Service Frequency:</label>
+    <input type="text" id="midJob"/>
+    <br></br>
+    <label3>Top of Form Offset:</label3>
+    <input type="text" id="tof"/>
+    <br></br>
+    <label4>Page Offset:</label4>
+    <input type="text" id="pageOffset"/>
+    <br></br>
+    <label5>Printhead Die Offset:</label5>
+    <input type="text" id="dieOffset"/>
+
+    <br></br>
+    <div class="slidecontainer">
+      <label>Lift Height:</label>
+      <input type="range" min="0" max="2" step="0.1" value="0" class="slider" id="myRange">
+      <p>Value: <span id="demo"></span></p>
+    </div>
+
+  <img id="myImg" src="Images/River.PNG">
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+</div>
+
+<div id="Maintenence" class="tabcontent">
+  <div class="push2">
+    <button class="button">Clean Printhead</button>
+    <button class="button">Stall Recovery</button>
+    <br></br>
+    <button class="button">Eject Service Sled</button>
+    <button class="button">Install Service Sled</button>
+    <button class="button">Test Service Sled</button>
+  </div>
+</div>
+
+<div id="Cost" class="tabcontent">
+  <table id="tableC">
+    <th id=cyanHeader>
+      Cyan
+    </th>
+    <th id=magentaHeader>
+      Magenta
+    </th>
+    <th id=yellowHeader>
+      Yellow
+    </th>
+    <th id=blackHeader>
+      Black
+    </th>
+    <th>
+      Job
+    </th>
+    <th>
+      Pages Printed
+    </th>
+    <th>
+      Quality
+    </th>
+    <th>
+      Media Size (in)
+    </th>
+    <th>
+      Estimated Page Cost
+    </th>
+    <th>
+      Estimated Job Cost
+    </th>
+  </table>
+</div>
+
+<div id="Network" class="tabcontent">
+  <table style="width:100%">
+    <tr>
+      <td><labelN>Printer Name:</labelN></td>
+      <td><input type="text" id="pName"/></td>
+      <td><labelN>Domain Name:</labelN></td>
+      <td><input type="text" id="dName"/></td>
+    </tr>
+
+    <tr>
+      <td><labelN>IP Address:</labelN></td>
+      <td><input type="text" id="ipAddress"/></td>
+      <td><labelN>Private IP:</labelN></td>
+      <td><input type="text" id="pIP"/></td>
+    </tr>
+
+    <tr>
+      <td><labelN>Subnet Mask:</labelN></td>
+      <td><input type="text" id="sMask"/></td>
+      <td><labelN>UI IP:</labelN></td>
+      <td><input type="text" id="uiIP"/></td>
+    </tr>
+
+    <tr>
+      <td><labelN>Default Gateway:</labelN></td>
+      <td><input type="text" id="dGateway"/></td>
+      <td><labelN>WINS Server:</labelN></td>
+      <td><input type="text" id="wServer"/></td>
+    </tr>
+
+    <tr>
+      <td>
+        <labelN>DHCP:<labelN>
+      </td>
+      <td><input type="checkbox" id="DHCP"></td>
+    </tr>
+  </table>
+</div>
+
+<div id="Advanced" class="tabcontent">
+  <table id="aTable">
+    <tr>
+      <td colspan="3" align="left">
+        <div id="lImage">
+          <img id="theLock" src="Images/lock2.png" alt="Lock Icon">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="push3">
+          <button id="buttonA" disabled>Replace Printbar</button>
+        </div>
+      </td>
+      <td>
+        <div class="push3">
+          <button id="buttonB" disabled>Pen Recovery 0</button>
+        </div>
+      </td>
+      <td>
+        <div class="push3">
+          <button id="buttonC" disabled>Pen Recovery 1</button>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="push3">
+          <button id="buttonD" disabled>Replace PCA</button>
+        </div>
+      </td>
+      <td>
+        <div class="push3">
+          <button id="buttonE" disabled>Calibrate Sled</button>
+        </div>
+      </td>
+      <td>
+        <div class="push3">
+          <button id="buttonF" disabled>HP Logging</button>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Pen to Paper Spacing:</label>
+        <input type="text" id="ppS" disabled/>
+      </td>
+      <td colspan="2">
+        <label>Download Firmware:</label>
+        <input type="file" id="firmwareUpdate" disabled>
+        <br />
+        <input type="submit" id="subButton" disabled>
+      </td>
+    </tr>
+  </table>
+</div>
+
+</body>
+
+<script>
+  window.addEventListener("load", function(){
+      numpad.attach({
+        id:"midJob",
+        readonly: false,
+        decimal: false,
+        max:4
+      });
+      numpad.attach({
+        id:"tof",
+        readonly: false,
+        decimal: false,
+        max:5
+      });
+      numpad.attach({
+        id:"pageOffset",
+        readonly: false,
+        decimal: false,
+        max:5
+      });
+      numpad.attach({
+        id:"dieOffset",
+        readonly: false,
+        decimal: false,
+        max:2
+      });
+
+      numpad.attach({
+        id:"pName",
+        readonly: false,
+        decimal: true,
+        max:15
+      });
+
+      numpad.attach({
+        id:"dName",
+        readonly: false,
+        decimal: true,
+        max:15
+      });
+
+      numpad.attach({
+        id:"ipAddress",
+        readonly: false,
+        decimal: true,
+        max:15
+      });
+
+      numpad.attach({
+        id:"pIP",
+        readonly: false,
+        decimal: true,
+        max:15
+      });
+
+      numpad.attach({
+        id:"sMask",
+        readonly: false,
+        decimal: true,
+        max:15
+      });
+
+      numpad.attach({
+        id:"uiIP",
+        readonly: false,
+        decimal: true,
+        max:15
+      });
+
+      numpad.attach({
+        id:"dGateway",
+        readonly: false,
+        decimal: true,
+        max:15
+      });
+
+      numpad.attach({
+        id:"wServer",
+        readonly: false,
+        decimal: true,
+        max:15
+      });
+
+      numpad.attach({
+        id:"ppS",
+        readonly: false,
+        decimal: false,
+        max:4
+      });
+
+
+  });
+
+</script>
+
+<script src="main.js"></script>
+
+</html>

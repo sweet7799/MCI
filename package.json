@@ -1,0 +1,14 @@
+{
+  "name": "mci",
+  "version": "1.0.0",
+  "description": "Machine Control Interface",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron app.js ."
+  },
+  "author": "Tristan Sweet",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.2.0"
+  }
+}
