@@ -10,6 +10,6 @@ Machine Control Interface
 <p>5. Check node.js and npm versions with <em>node -v</em> and <em>npm -v</em>, respectively</p>
 
 <h3>To Run</h3>
-<p> Enter MCI directory</p>
-<p> Use command <em>npm install</em> before first run</p>
-<p>Use command <em>npm start</em></p>
+<p>1. Enter MCI directory</p>
+<p>2. Use command <em>npm install</em> before first run</p>
+<p>3. Use command <em>npm start</em></p>
